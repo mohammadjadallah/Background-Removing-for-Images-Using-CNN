@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Removal Tool</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('.static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <!--This container will contains card and the image and the button-->
+  <div class="container">
+    <!-- the card is a simple card that be in center of the page -->
+    <div class="card">
+      
+        <!-- card-body is what the card contains image, button -->
+      <div class="card-body">
+        <!-- card-title is used to style the title -->
+        <h5 class="card-title">Background Removal Tool</h5>
+        <!-- create a label and  button then hide the button-->
+        <form method="post" enctype="multipart/form-data" target="_blank">
+
+            <label for="imageUpload" class="btn">Upload Image</label>
+            <input name="selected_file" type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+            
+            <!-- Remove background button -->
+            <label for="rmbtn" class="btn">Remove BG</label>
+            <input type="submit" id="rmbtn" onclick ="warn(event)">
+
+            <div class="contbtn">
+
+              <label for="originalBtn" class="btn">Original</label>
+              <input class="btn" id="originalBtn" onclick="showOrigImg(event)">
+
+              <label for="previewBtn" class="btn">Preview</label>
+              <input class="btn" id="previewBtn">
+
+              <label for="downlaoder" class="btn"><a class="down" href="../static/output/output.png" download>Downlaod</a></label>
+              <input class="btn" id="downlaoder" style="display: none;">
+              
+            </div>
+          </form>
+          <div class="image-preview">
+            <img id="preview">
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+    <script>
+
+        // Create a global variable
+        var selected_image = null;
+        var output_image_path = null;
+        let prev_btn = document.getElementById("previewBtn");
+
+        var previewImage = function(event){
+            var image = document.getElementById("preview");
+            selected_image = event.target.files[0];
+            image.src = URL.createObjectURL(selected_image);
+            image.style.display = "block";
+        };
+
+        var showOrigImg = function(event) {
+            var image = document.getElementById("preview");
+            image.src = URL.createObjectURL(selected_image);
+            image.style.display = "block";
+        }
+
+        var warn = function(event){
+            alert("Processing the image will take some seconds!");
+        };
+
+        var reloadPreview = function(event) {
+            output_image_path = "../static/output/output.png"
+            var image = document.getElementById("preview");
+            image.src = output_image_path + "?time=" + new Date().getTime();
+
+        };
+
+    document.getElementById("previewBtn").addEventListener("click", reloadPreview);
+    </script>
+
+</body>
+</html>
