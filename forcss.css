@@ -1,0 +1,201 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Trebuchet MS;
+}
+
+/* Header styles */
+header {
+    height: 80px;
+    background-color: #ffffff;
+    color: #fff;
+}
+
+/* ... Container and its children ... */
+
+
+.container {
+    max-width: auto;
+    margin: 0 auto;
+    /* padding: 0 20px; */
+}
+
+
+/* fstsection styles */
+.fstsection {
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff2f4;
+  }
+  
+  .item-1 {
+    margin-top: -130px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 0 0 0;
+  }
+  
+  .item-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+.item-1 h1{
+    font-size: 35px;
+
+}
+
+.item-1 h2{
+    font-size: 22px;
+    text-align: center;
+
+}
+  
+  .item-2 img {
+    margin-top: -250px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 10px 20px rgba(0,0,0,0.2);
+    transition: box-shadow 0.4s ease-in-out;
+    border-radius: 20px;
+  }
+
+.font-display{
+    color: rgb(94, 93, 93);
+    font-weight: 800;
+}
+
+.text-typo{
+    font-family: Trebuchet MS;
+}
+
+
+/* Features styles */
+.sdsection {
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    
+} 
+.card {
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+    color: rgb(94, 93, 93);
+    box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-upload {
+    width: 300px;
+    height: 80px;
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: Trebuchet MS;
+    font-weight: 800;
+
+}
+
+.btn-upload:hover {
+    background-color: #006B8F;
+  }
+
+/* 3d section : it will contains som cards that talk about how to use the app*/
+.thdsection{
+    height: 500px;
+    background-color: #eff2f4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+}
+
+.cd{
+    background-color: #ffffff;
+    display: inline-block;
+    width: 350px;
+    height: 400px;
+    margin: 10px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.5);
+    transition: box-shadow 0.4s ease-in-out;
+    border-radius: 20px;
+    /* text-overflow: ellipsis; */
+
+
+}
+
+.useage-steps{
+
+    font-family: Trebuchet MS;
+    font-size: 60px;
+    text-align: center;
+    background-color: #eff2f4;
+    padding: 50px 0 0 0;
+    margin: 0 0 0 0;
+
+}
+
+.step{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 30px;
+    width: 30px;
+    padding: 8px 45px 8px 15px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Trebuchet MS;
+    background: linear-gradient(to bottom, #e2e2e2, #dbdbdb);
+    border-radius: 20px;
+    color: #008CBA;
+    
+}
+
+.title-card{
+    text-align: left;
+    font-family: Trebuchet MS;
+    margin: 23px;
+    font-size: 25px;
+}
+
+.text-card{
+    text-align: center;
+    color: rgb(94, 93, 93);
+    font-weight: 800;
+    font-family: Trebuchet MS;
+
+
+}
+
+/* Footer styles */
+footer {
+    height: 100px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+

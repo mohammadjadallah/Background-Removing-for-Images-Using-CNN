@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Upload and Preview</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			margin: 0;
+			padding: 0;
+			background-color: #f8f8f8;
+		}
+		
+		.card {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			border-radius: 10px;
+			width: 50%;
+			max-width: 500px;
+		}
+		
+		.card button {
+			margin: 10px;
+			padding: 10px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		.card button:hover {
+			background-color: #0069d9;
+		}
+		
+		.preview {
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+		
+		.preview img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+</head>
+<body>
+	<div class="card">
+		<button id="select-image">Select Image</button>
+		<button id="remove-background">Remove Background</button>
+		<div class="preview">
+			<button id="preview-image">Preview Image</button>
+			<button id="original-image">Original Image</button>
+		</div>
+		<img id="selected-image" style="display:none;" />
+	</div>
+
+	<script>
+		const selectImage = document.getElementById('select-image');
+		const removeBackground = document.getElementById('remove-background');
+		const previewImage = document.getElementById('preview-image');
+		const originalImage = document.getElementById('original-image');
+		const selectedImage = document.getElementById('selected-image');
+
+		// Code for selecting an image and displaying it
+		selectImage.addEventListener('click', () => {
+			const input = document.createElement('input');
+			input.type = 'file';
+			input.accept = 'image/*';
+			input.addEventListener('change', () => {
+				const file = input.files[0];
+				const reader = new FileReader();
+				reader.addEventListener('load', () => {
+					// Set the src of the image element to the data URL
+					selectedImage.src = reader.result;
+					selectedImage.style.display = 'block';
+					// Set the src of the preview image to the data URL
+					document.querySelector('.preview img').src = reader.result;
+				});
+				reader.readAsDataURL(file);
+			});
+			input.click();
+		});
+
+		// Code for removing the background
+		removeBackground.addEventListener('click', () => {
+			// Your code here
+		});
+
+		// Code for previewing the image
+		previewImage.addEventListener('click', () => {
+			// Set the src of the preview image to the data URL of the selected image
+			document.querySelector('.preview
