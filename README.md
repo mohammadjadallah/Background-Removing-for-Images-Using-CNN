@@ -1,6 +1,8 @@
 # Background-Removing for Images Using CNN
 This project focuses on implementing a Convolutional Neural Network (CNN) for the purpose of background removal in images. Leveraging the power of deep learning, the CNN model is trained to effectively distinguish and remove backgrounds from images, providing users with a seamless and efficient tool for image processing.
 
+![kid](https://github.com/mohammadjadallah/Background-Removing-for-Images-Using-CNN/assets/70474875/d18c1de5-97aa-471f-b778-eecc72c51113)
+
 ## Some shots from the website:
 - The landing page:
 
